@@ -1,0 +1,8 @@
+.gitignore
+.vscode/**
+.coai/**
+out/test/**
+src/**
+tsconfig.json
+*.tgz
+*.vsix

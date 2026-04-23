@@ -1,0 +1,9 @@
+node_modules/
+out/
+*.tgz
+*.vsix
+.coai/
+test/
+.vscode/
+.DS_Store
+npm-debug.log*

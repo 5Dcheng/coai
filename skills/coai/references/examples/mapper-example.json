@@ -1,0 +1,22 @@
+{
+  "nodes": {
+    "用户填写": {
+      "anchor": "auth.register.form.001",
+      "file": "src/sample/registerFlow.ts",
+      "line": 12,
+      "lastUpdated": "2026-04-14"
+    },
+    "服务器校验": {
+      "anchor": "auth.register.validate.001",
+      "file": "src/sample/registerFlow.ts",
+      "line": 24,
+      "lastUpdated": "2026-04-14"
+    },
+    "成功信息返回": {
+      "anchor": "auth.register.response.001",
+      "file": "src/sample/registerFlow.ts",
+      "line": 45,
+      "lastUpdated": "2026-04-14"
+    }
+  }
+}

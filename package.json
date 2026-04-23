@@ -1,0 +1,125 @@
+{
+  "name": "@5dc/coai",
+  "displayName": "CoAI",
+  "description": "VS Code extension plus CLI workflow for CoAI function docs, mapper sync, bug repair, and pre-commit checks.",
+  "version": "0.0.1",
+  "publisher": "5dc",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/5Dcheng/coai.git"
+  },
+  "icon": "assets/c5dc.png",
+  "engines": {
+    "vscode": "^1.96.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "coai",
+    "documentation",
+    "navigation",
+    "markdown",
+    "git",
+    "pre-commit",
+    "vscode-extension"
+  ],
+  "files": [
+    "out/**/*",
+    "template/**/*",
+    "skills/coai/**/*",
+    "assets/c5dc.png",
+    "README.md",
+    "README_zh.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "activationEvents": [
+    "onLanguage:markdown",
+    "onCommand:coaiNavigation.openMappedCode",
+    "onCommand:coaiNavigation.syncMapperFromGitChanges",
+    "onCommand:coaiNavigation.runPreCommitCoaiCheck",
+    "onCommand:coaiNavigation.installGitHook",
+    "onCommand:coaiNavigation.uninstallGitHook",
+    "onCommand:coaiNavigation.restoreGitHookBackup",
+    "onCommand:coaiNavigation.resolveOpenBugLog",
+    "onCommand:coaiNavigation.reopenResolvedBugLog"
+  ],
+  "main": "./out/extension.js",
+  "bin": {
+    "coai": "./out/cli/coaiCli.js"
+  },
+  "contributes": {
+    "commands": [
+      {
+        "command": "coaiNavigation.openMappedCode",
+        "title": "CoAI: Open mapped code"
+      },
+      {
+        "command": "coaiNavigation.syncMapperFromGitChanges",
+        "title": "CoAI: Sync mapper from git changes"
+      },
+      {
+        "command": "coaiNavigation.runPreCommitCoaiCheck",
+        "title": "CoAI: Run pre-commit CoAI check"
+      },
+      {
+        "command": "coaiNavigation.installGitHook",
+        "title": "CoAI: Install local pre-commit hook"
+      },
+      {
+        "command": "coaiNavigation.uninstallGitHook",
+        "title": "CoAI: Uninstall local pre-commit hook"
+      },
+      {
+        "command": "coaiNavigation.restoreGitHookBackup",
+        "title": "CoAI: Restore pre-commit hook backup"
+      },
+      {
+        "command": "coaiNavigation.resolveOpenBugLog",
+        "title": "CoAI: Resolve open bug log"
+      },
+      {
+        "command": "coaiNavigation.reopenResolvedBugLog",
+        "title": "CoAI: Reopen resolved bug log"
+      }
+    ],
+    "configuration": {
+      "title": "CoAI",
+      "properties": {
+        "coaiNavigation.projectRoot": {
+          "type": "string",
+          "default": ".coai",
+          "description": "Root directory for project, mapper, and node data."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "clean": "node -e \"require('fs').rmSync('out', { recursive: true, force: true })\"",
+    "build": "npm run clean && tsc -p .",
+    "watch": "tsc -w -p .",
+    "package": "npm run package:tgz && npm run package:vsix",
+    "package:tgz": "node ./scripts/package-tgz.js",
+    "package:vsix": "node ./scripts/package-vsix.js",
+    "coai:pre-commit-check": "node ./out/cli/coaiCli.js pre-commit-check",
+    "coai:install-hook": "node ./out/cli/coaiCli.js install-hook",
+    "coai:install-hooks": "node ./out/cli/coaiCli.js install-hooks",
+    "coai:uninstall-hook": "node ./out/cli/coaiCli.js uninstall-hook",
+    "coai:restore-hook": "node ./out/cli/coaiCli.js restore-hook",
+    "coai:init": "node ./out/cli/coaiCli.js init",
+    "coai:version": "node ./out/cli/coaiCli.js version",
+    "coai:check-update": "node ./out/cli/coaiCli.js check-update",
+    "coai:update": "node ./out/cli/coaiCli.js update",
+    "coai:doctor": "node ./out/cli/coaiCli.js doctor",
+    "coai:skill-sync": "npm run build && node ./out/cli/coaiCli.js skill sync",
+    "coai:coai-sync": "npm run build && node ./out/cli/coaiCli.js coai sync"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "@types/vscode": "^1.96.0",
+    "typescript": "^5.7.3",
+    "vsce": "^2.15.0"
+  }
+}

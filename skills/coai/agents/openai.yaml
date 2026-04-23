@@ -1,0 +1,4 @@
+interface:
+  display_name: "CoAI Skill"
+  short_description: "CoAI workflow and method guide"
+  default_prompt: "Use $coai to apply CoAI methodology, .coai maintenance rules, and CLI workflows in this repository."
