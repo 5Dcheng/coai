@@ -1,0 +1,5 @@
+{
+  "version": 1,
+  "projectRoot": ".coai",
+  "description": "CoAI metadata for the CoAI extension and CLI itself."
+}

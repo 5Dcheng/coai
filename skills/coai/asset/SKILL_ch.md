@@ -11,6 +11,7 @@
 它负责：
 
 - `.coai/project`
+- `.coai/contract`
 - `.coai/mapper`
 - `.coai/node`
 - `.coai/log/bugs` 的模板类资产
@@ -33,6 +34,7 @@
 - 只创建当前任务真正需要的资产
 - `.coai/current.md` 只记录动态进展，不能变成第二份功能文档
 - `.coai/project/<module>.md` 是可选模块文档，只有模块定位、功能关系或模块级数据流值得单独说明时才创建
+- `.coai/contract/object`、`.coai/contract/algorithm`、`.coai/contract/interface` 下的 contract 文档是可选结构化约定文档，只有完整数据结构、可测试算法或模块级通信接口在读源码前有帮助时才创建
 - `.coai` 只承载已沉淀认知，不承载完整探索历史
 - 试错后形成的稳定高价值经验，只有在仍然影响后续理解、实现或维护时，才克制地写入功能文档
 
@@ -42,6 +44,7 @@
 
 - 新增一个功能认知入口：创建 `.coai/project/<module>/<feature>.md`
 - 需要模块级认知入口时：创建 `.coai/project/<module>.md`
+- 需要结构化约定时：创建 `.coai/contract/**`，默认使用普通 Markdown 链接，不使用 `[[双链 token]]`
 - 把功能绑定到代码：先确定 `anchor` 和 mapper 骨架，再在真实代码入口写入 `@coai anchor: <id>`，由 agent 把 `anchor` 与 `file` 回写到 mapper，最后让系统对齐 `line`
 - 增加 Hover 认知：只为真正值得 Hover 提示的 token 创建 `.coai/node/<module>/<feature>/`
 - 只更新项目进展：编辑 `.coai/current.md`
@@ -80,6 +83,22 @@ mapper 骨架规则：
 - 新增功能
 - 功能认知发生实质变化
 - 某个重要分支/异常规则需要沉淀到功能文档
+
+### contract
+
+以下情况应创建或更新 contract：
+
+- object / 数据结构需要完整到足以作为样板或实现指引
+- 算法需要记录输入、预测输出与关键行为，以便推导单元测试
+- 模块级通信接口需要稳定请求 / 响应约定
+
+以下情况不应创建 contract：
+
+- feature 文档加源码入口已经足够清楚
+- 只是局部实现细节
+- 只是重复源码，没有增加认知价值
+
+contract 文件默认使用普通 Markdown 链接和文件路径。不要在 contract 文件中使用 `[[双链 token]]`，除非系统显式支持 contract mapper 语义。
 
 ### mapper
 
@@ -207,6 +226,7 @@ mapper 骨架规则：
 - 不要创建没有真实 anchor 的占位 mapper
 - 不要给功能文档中的每一句话都生成 node
 - 不要把系统资产写进 `.coai/project`、`.coai/mapper`、`.coai/node`
+- 不要把 `.coai/contract` 变成完整 spec 仓库或源码摘要
 - 不要把 `<module>`、`<feature>` 这种字面占位符留在真实宿主项目里
 - 不要在已经有真实进展后，仍然让 `.coai/current.md` 为空
 - 不要盲目覆盖用户已经维护的 CoAI 资产

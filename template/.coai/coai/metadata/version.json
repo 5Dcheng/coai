@@ -1,0 +1,26 @@
+{
+  "version": "0.1.0",
+  "releasedAt": "2026-04-15",
+  "channels": {
+    "systemPackage": {
+      "name": "@5dc/coai",
+      "type": "npm+vsix",
+      "version": "0.0.1"
+    },
+    "skill": {
+      "name": "coai",
+      "version": "0.1.0"
+    },
+    "workspaceAssets": {
+      "path": ".coai/coai",
+      "version": "0.1.0"
+    }
+  },
+  "compatibility": {
+    "workspaceAssets": "^0.1.0"
+  },
+  "notes": [
+    "目标仓库接入时可用本文件记录当前 CoAI 系统资产版本。",
+    "若未来系统包升级，请同步刷新该文件中的兼容版本范围。"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "label": "更新检查执行",
+  "intent": "检查 npm registry 中 CoAI 包是否存在新版本，并给出升级命令提示。",
+  "logic": [
+    "读取当前 npm 包名称与版本",
+    "执行 `npm view <package> version --silent` 获取 registry 最新版本",
+    "若最新版本更高，则提示先升级 npm 包，再执行 `npx coai update`"
+  ],
+  "risks": [
+    "网络不可用或 npm registry 不可访问时不能阻断用户工作",
+    "本地开发 tarball 场景下 registry 包可能不存在，应只输出提示"
+  ],
+  "scale": [
+    "后续可以增加 release notes、channel、beta 版本等更新策略。"
+  ]
+}

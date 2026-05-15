@@ -1,0 +1,18 @@
+{
+  "label": "Hook安装执行",
+  "intent": "把 CoAI 的 pre-commit 模板自动安装到当前仓库的 `.git/hooks/pre-commit`。",
+  "logic": [
+    "确认当前目录是 git 工作区",
+    "读取 `./.coai/coai/githooks/pre-commit` 模板",
+    "若目标位置已有未知 hook，则先备份",
+    "写入新的 pre-commit hook，并尽量设置可执行权限"
+  ],
+  "risks": [
+    "直接覆盖未知 hook 会破坏用户原有提交流程",
+    "不同平台对 hook 权限处理存在差异"
+  ],
+  "scale": [
+    "当前先解决本地仓库安装问题",
+    "后续可继续演进为更正式的团队级 hook 安装策略"
+  ]
+}

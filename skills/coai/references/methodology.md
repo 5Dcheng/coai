@@ -74,11 +74,30 @@ Default decision:
 Layer responsibilities:
 
 - `project`: feature cognition and specification
+- `contract`: structured data structures, core algorithms, and module-level communication interfaces when they are stable enough to guide future development
 - `node`: Hover cognition
 - `mapper`: code location
 - `code`: actual implementation
 - `.coai/current.md`: dynamic progress only
 - `log/bugs`: bug lifecycle records
+
+## Contract layer
+
+The contract layer is optional and should stay lightweight.
+
+Use `.coai/contract` only for current project agreements that are structured, high-signal, and useful before reading source code. The initial contract scope is limited to:
+
+- object / data structures: complete JSON, SQL, or host-language type shapes that act as templates or implementation guidance, stored under `.coai/contract/object`
+- algorithms: implementation idea, key code block, input, and expected output, so unit tests can be derived, stored under `.coai/contract/algorithm`
+- communication interfaces: module-level request / response agreements aligned with `project/<module>.md`, stored under `.coai/contract/interface`
+
+Do not turn contract into a full spec store.
+
+Do not duplicate details that are already clearer in source code and reachable through feature tokens, mapper, or anchors.
+
+Contract files should use normal Markdown links and file paths by default. Do not use `[[double-link tokens]]` in contract files unless contract mapper semantics are explicitly supported.
+
+Contract should evolve with the project. Write it when a structure, algorithm, or interface has become the current reasonable agreement, and revise it when the implementation changes that agreement.
 
 ## CoAI cognition boundary
 

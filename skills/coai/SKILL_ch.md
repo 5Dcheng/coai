@@ -39,10 +39,12 @@
 - 源码文件边界按实现职责隔离划分，不按功能文档长相划分。
 - `.coai` 必须位于工作区根目录，即 `./.coai`。
 - AI 负责新增 CoAI 资产，系统负责确定性维护，AI 或人工负责语义修复判断。
-- `project` 负责功能语义，`node` 负责 Hover 认知，`mapper` 负责代码定位，`current.md` 只负责动态进展。
+- `project` 负责功能语义，可选的 `contract` 负责结构化数据 / 算法 / 接口约定，`node` 负责 Hover 认知，`mapper` 负责代码定位，`current.md` 只负责动态进展。
 - 共享代码允许多语义 anchor；不要因为代码在共享目录里，就直接升格成 `utils/common`。
 - VS Code 负责交互面，CLI / Git hook 负责自动化面。
 - CoAI 记录的是已沉淀的项目认知，不是全部探索过程。
+- CoAI 资产遵循渐进式披露：先读 `current.md`，再读相关 feature 文档；只有任务需要结构化数据、算法或接口约定时才读 contract；只有需要实现事实时才读源码。
+- contract 文件默认使用普通 Markdown 链接和文件路径，不使用 `[[双链 token]]`；除非系统显式支持 contract mapper 语义。
 - 试错后沉淀出的稳定高语义经验，可以克制地写入对应功能文档；原始探索轨迹不要默认进入 `.coai/`。
 - `anchor id` 应在正式实现前确定。
 - `mapper file` 原则上应在正式实现前确定。
@@ -86,7 +88,7 @@
 
 - 任务宽泛、混合、还没分类：`router/SKILL.md`
 - 功能边界、源码文件归属、共享代码/common 判断、`.coai` 是否要动：`core/SKILL.md`
-- `.coai/project`、`.coai/mapper`、`.coai/node`、`current.md`、template、example：`asset/SKILL.md`
+- `.coai/project`、`.coai/contract`、`.coai/mapper`、`.coai/node`、`current.md`、template、example：`asset/SKILL.md`
 - VS Code 与 CLI、init、update、doctor、git-sync、pre-commit、bug-repair、hook：`runtime/SKILL.md`
 
 ## references 边界

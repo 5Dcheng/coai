@@ -1,0 +1,16 @@
+{
+  "label": "Mapper反向索引",
+  "intent": "把 mapper 从 token 视角转换成代码文件视角，便于按变更文件命中。",
+  "logic": [
+    "扫描 .coai/mapper/**/*.mapper.json",
+    "读取 nodes",
+    "建立 code file -> mapper entries[] 的映射"
+  ],
+  "risks": [
+    "mapper JSON 非法时只能跳过并报告",
+    "entry.file 不规范会导致索引失效"
+  ],
+  "scale": [
+    "反向索引是避免无关文件扫描的关键步骤"
+  ]
+}

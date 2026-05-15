@@ -75,11 +75,30 @@ loop 中的职责划分：
 层级职责：
 
 - `project`：功能认知与规格
+- `contract`：结构化数据结构、核心算法、模块级通信接口；仅在这些约定足够稳定、能指导后续开发时写入
 - `node`：Hover 认知
 - `mapper`：代码定位
 - `code`：实际实现
 - `.coai/current.md`：只记录动态进展
 - `log/bugs`：bug 生命周期记录
+
+## Contract 层
+
+contract 层是可选层，必须保持轻量。
+
+只有当当前项目约定具备结构化、高语义、读源码前有帮助这三个特征时，才写入 `.coai/contract`。第一阶段 contract 只覆盖：
+
+- object / 数据结构：用 JSON、SQL 或宿主语言类型结构完整记录，不做删减，作为样板或实现指引，存放于 `.coai/contract/object`
+- 算法：记录核心算法的实现思想、关键代码块、输入与预测输出，目标是可以据此设计单元测试，存放于 `.coai/contract/algorithm`
+- 通信接口：按模块级组织，与 `project/<module>.md` 对应，记录稳定请求 / 响应约定，存放于 `.coai/contract/interface`
+
+不要把 contract 变成完整 spec 仓库。
+
+如果某些细节已经可以通过 feature token、mapper 或 anchor 稳定跳到源码，且源码表达更清楚，就不要重复写入 contract。
+
+contract 文件默认使用普通 Markdown 链接和文件路径。不要在 contract 文件中使用 `[[双链 token]]`，除非系统显式支持 contract mapper 语义。
+
+contract 应随项目演进。当数据结构、算法或接口已经成为当前最合理约定时写入；当实现改变该约定时修订。
 
 ## CoAI 沉淀边界
 

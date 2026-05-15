@@ -1,0 +1,17 @@
+{
+  "label": "Anchor行号校正",
+  "intent": "在 mapper line 可能过期时，用 anchor 重新定位真实代码行。",
+  "logic": [
+    "打开目标文档后扫描 anchor 注释",
+    "命中后对比 mapper line",
+    "如有偏移则更新 entry.line",
+    "将新 line 与 lastUpdated 回写 mapper"
+  ],
+  "risks": [
+    "anchor 被删除或重复会降低定位可靠性",
+    "当前实现是点击时校正，尚未做 git 变更后的后台批量维护"
+  ],
+  "scale": [
+    "后续可结合 git diff 只更新受影响 mapper，避免无关扫描"
+  ]
+}

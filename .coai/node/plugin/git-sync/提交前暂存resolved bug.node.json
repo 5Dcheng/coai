@@ -1,0 +1,17 @@
+{
+  "label": "提交前暂存resolved bug",
+  "intent": "在提交前检查通过时，将本次 bug 归档产生的 open 删除与 resolved 新增一起加入暂存区。",
+  "logic": [
+    "git-sync 启动时会把 open 中状态为 fixed、wont_fix、obsolete 的 bug 迁移到 resolved。",
+    "pre-commit 核心在确认没有 open bug 后，暂存本次归档涉及的 open 旧路径和 resolved 新路径。",
+    "使用 `git add -A` 让 Git 同时记录删除与新增，避免只提交 resolved 新文件而遗漏 open 删除。",
+    "未修复的 open bug 不会被自动暂存，继续留在工作区中提醒开发者处理。"
+  ],
+  "risks": [
+    "不能把 open bug 自动暂存，否则会把未处理问题混入提交。",
+    "resolved bug 的暂存必须依赖本次系统归档结果，不能扫描整个 resolved 目录全量加入。"
+  ],
+  "scale": [
+    "后续可以扩展为更细的 bug 生命周期报告，但当前只做 deterministic staging。"
+  ]
+}

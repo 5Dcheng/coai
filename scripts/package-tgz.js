@@ -27,7 +27,7 @@ try {
   copyIntoPackage("out");
   copyIntoPackage("template");
   copyIntoPackage("skills/coai");
-  copyIntoPackage("assets/c5dc.png");
+  copyIntoPackage("assets");
   copyIntoPackage("README.md");
   copyIntoPackage("README_zh.md");
   copyIntoPackage("CHANGELOG.md");

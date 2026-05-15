@@ -1,4 +1,22 @@
-# CoAI
+<p align="center">
+  <img src="assets/pixel-coai-cut.png" alt="CoAI pixel artwork" width="720">
+</p>
+
+<h1 align="center">CoAI</h1>
+
+<p align="center">
+  面向 AI coding 的项目认知层。
+</p>
+
+<p align="center">
+  <a href="README.md"><strong>English</strong></a>
+  ·
+  <a href="#快速开始"><strong>快速开始</strong></a>
+  ·
+  <a href="docs/ch/README.md"><strong>中文文档</strong></a>
+  ·
+  <a href="docs/ch/effectiveness.md"><strong>有效性测试</strong></a>
+</p>
 
 CoAI 是面向 AI coding 的项目认知层。
 
@@ -169,6 +187,29 @@ CoAI -> spec / plan / agent coding -> CoAI
 
 它不记录所有过程细节，只保留仍然有效的功能语义、关键决策、实现入口和维护线索。
 
+## Benchmark 与有效性验证
+
+CoAI 的有效性验证会区分三类数据：
+
+- 系统可靠性：真实运行 CLI、git-sync、pre-commit、mapper 与 bug log case，量化 `passRate`、`mapperLineAccuracy`、`bugTypeAccuracy` 等指标。
+- Agent 认知效率：用有无 CoAI 的 A/B 任务对比目标文件命中率、读取文件数、读取行数、错误假设数和任务成功率。
+- 开发者黑盒感：在没有真实开发者样本前只使用明确标注的 `SIMULATED_DATA`，不把模拟数据表述为真实用户研究结论。
+
+默认 benchmark 临时工作区放在 `E:\c5dc\coai\benchmark-workspaces`，避免污染当前代码仓库。
+
+当前 TeamDesk Lite 实验中的初步实测证据：
+
+- 在新窗口项目认知任务中，相比 baseline，CoAI 将源码读取从 26 个文件降到 8 个文件；该次 GLM-5-turbo 账单 billed usage 从 299,655 tokens 降到 174,740 tokens。
+- 在 R26-R30 维护任务中，CoAI 没有降低总读取文件数，但将源码/配置/测试/数据读取从 46 降到 21，把一部分源码探索转移为读取 `.coai` 认知资产。
+- 新鲜的 `AGENTS.md` 在单次 R31 使用中更便宜，但它的生成成本高，且后续开新 chat 前仍需人工显式更新。因此它是强 baseline 和中间态，不是 CoAI 的完全替代。
+
+这些数据支持一个克制的产品判断：CoAI 能帮助长期 AI coding 项目沉淀可复用、按功能组织、可定位源码入口的项目认知。它不证明 CoAI 在所有场景都更省 token，也不代表 CoAI 可以替代源码验证。
+
+详细文档：
+
+- [Benchmark 与有效性验证](docs/ch/benchmark.md)
+- [CoAI 有效性测试结果](docs/ch/effectiveness.md)
+
 ## 命令入口
 
 常用命令：
@@ -197,10 +238,13 @@ npm run coai:pre-commit-check
 - [无 package.json 模式](docs/ch/no-package-json-mode.md)
 - [升级路径](docs/ch/upgrade-paths.md)
 - [手动验证](docs/ch/manual-verification.md)
+- [Benchmark 与有效性验证](docs/ch/benchmark.md)
+- [CoAI 有效性测试结果](docs/ch/effectiveness.md)
 
 技术文档：
 
 - [功能与源码文件划分规则](docs/ch/feature-boundary-rules.md)
+- [Contract 层](docs/ch/contract-layer.md)
 - [CoAI 与 Spec 类系统的区别](docs/ch/coai-vs-spec.md)
 - [Skill 来源](docs/ch/skill-source.md)
 - [Hook 策略](docs/ch/hook-policy.md)

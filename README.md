@@ -1,4 +1,22 @@
-# CoAI
+<p align="center">
+  <img src="assets/pixel-coai-cut.png" alt="CoAI pixel artwork" width="720">
+</p>
+
+<h1 align="center">CoAI</h1>
+
+<p align="center">
+  Project cognition layer for AI coding.
+</p>
+
+<p align="center">
+  <a href="README_zh.md"><strong>中文</strong></a>
+  ·
+  <a href="#quick-start"><strong>Quick Start</strong></a>
+  ·
+  <a href="docs/ch/README.md"><strong>Docs</strong></a>
+  ·
+  <a href="docs/effectiveness.md"><strong>Effectiveness</strong></a>
+</p>
 
 CoAI is a project cognition layer for AI coding.
 
@@ -169,6 +187,29 @@ CoAI -> spec / plan / agent coding -> CoAI
 
 It does not store every process detail. It stores the feature meaning, key decisions, code entry points, and maintenance context that remain valid.
 
+## Benchmark and Effectiveness Validation
+
+CoAI validation separates three kinds of evidence:
+
+- System reliability: run real CLI, git-sync, pre-commit, mapper, and bug-log cases, then quantify metrics such as `passRate`, `mapperLineAccuracy`, and `bugTypeAccuracy`.
+- Agent cognition efficiency: compare A/B tasks with and without CoAI using target file accuracy, files read, lines read, wrong assumptions, and task success rate.
+- Developer black-box perception: before real developer samples exist, use only clearly labeled `SIMULATED_DATA` and never present simulated data as real user-study evidence.
+
+The default benchmark workspace is `E:\c5dc\coai\benchmark-workspaces`, outside the repository, to avoid polluting the codebase.
+
+Current measured evidence from the TeamDesk Lite experiment:
+
+- In a new-chat project cognition task, CoAI reduced source-file reads from 26 to 8 compared with the baseline, and the GLM-5-turbo billed usage dropped from 299,655 to 174,740 tokens in that run.
+- In R26-R30 maintenance tasks, CoAI did not reduce total files read, but it reduced source/config/test/data reads from 46 to 21 by shifting part of the exploration into `.coai` cognition assets.
+- A fresh `AGENTS.md` was cheaper for the single R31 usage task, but its generation cost was high and it requires manual updates before future new chats. This makes it a strong middle baseline, not a replacement for structured feature cognition, mapper/anchor source entry points, and cognition backflow.
+
+This evidence supports a cautious product claim: CoAI helps preserve reusable, feature-oriented, source-locatable project cognition for long-running AI coding work. It does not prove that CoAI always reduces tokens or replaces source verification.
+
+Details:
+
+- [Benchmark and Effectiveness Validation](docs/benchmark.md)
+- [CoAI Effectiveness Evidence](docs/effectiveness.md)
+
 ## Commands
 
 Common commands:
@@ -197,10 +238,13 @@ User guides:
 - [No package.json Mode](docs/ch/no-package-json-mode.md)
 - [Upgrade Paths](docs/ch/upgrade-paths.md)
 - [Manual Verification](docs/ch/manual-verification.md)
+- [Benchmark and Effectiveness Validation](docs/benchmark.md)
+- [CoAI Effectiveness Evidence](docs/effectiveness.md)
 
 Technical docs:
 
 - [Feature and Source Boundary Rules](docs/ch/feature-boundary-rules.md)
+- [Contract Layer](docs/contract-layer.md)
 - [CoAI vs Spec Systems](docs/ch/coai-vs-spec.md)
 - [Skill Source](docs/ch/skill-source.md)
 - [Hook Policy](docs/ch/hook-policy.md)

@@ -1,0 +1,17 @@
+{
+  "label": "包初始化执行",
+  "intent": "让目标项目在安装 CoAI npm 包后，通过 npx coai init 完成首次接入。",
+  "logic": [
+    "CLI 解析 init 子命令并定位当前 npm 包根目录。",
+    "初始化核心复制 package 内的 template/.coai 到宿主项目 .coai。",
+    "系统合并 .coai/coai/package.coai-scripts.json 中的 coai:* scripts 到宿主 package.json。",
+    "系统确保 .gitignore 至少忽略 node_modules/，再安装本地 pre-commit hook。"
+  ],
+  "risks": [
+    "初始化不会覆盖已存在的宿主项目语义文件，避免误删用户内容。",
+    "若宿主项目没有 Git 工作区，hook 安装会失败，需要先 git init。"
+  ],
+  "scale": [
+    "后续脚手架可以在 init 基础上继续扩展依赖检查、VS Code 插件提示与版本升级策略。"
+  ]
+}

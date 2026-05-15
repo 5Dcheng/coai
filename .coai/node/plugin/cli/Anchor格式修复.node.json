@@ -1,0 +1,17 @@
+{
+  "label": "Anchor格式修复",
+  "intent": "扫描工作区中的非标准 CoAI anchor 前缀，并统一修正为标准格式。",
+  "logic": [
+    "兼容识别带冒号和不带冒号的 @coai anchor 前缀",
+    "只重写固定前缀部分为标准的 @coai anchor: ",
+    "保持原有 anchor id 不变，避免误改 mapper 语义"
+  ],
+  "risks": [
+    "doctor 只适合修复固定前缀格式，不负责修复错误的 anchor id",
+    "若文件内容本身已损坏，doctor 不保证恢复业务语义"
+  ],
+  "scale": [
+    "可作为多种 LLM 生成代码后的格式归一工具",
+    "后续也可扩展到只检查不修复的模式"
+  ]
+}

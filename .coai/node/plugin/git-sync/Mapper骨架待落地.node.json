@@ -1,0 +1,9 @@
+{
+  "title": "Mapper骨架待落地",
+  "intent": "允许 mapper 在实现前只记录 anchor，等待 agent 后续补回 file，并由系统维护 line。",
+  "notes": [
+    "只有 anchor、暂缺 file 的 mapper entry 属于可接受的实现前骨架。",
+    "git-sync 会输出 Warn 并跳过反向索引，不生成 buglog，也不计为同步失败。",
+    "真实实现或源码归属明确后，agent 应补回 file；line 继续交给系统维护。"
+  ]
+}

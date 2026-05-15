@@ -1,0 +1,15 @@
+{
+  "label": "Bug检测",
+  "intent": "在 git-sync 过程中识别 CoAI 异常并决定是否冻结 mapper。",
+  "logic": [
+    "检查 open bug",
+    "扫描 anchor 异常",
+    "识别新 bug 或冻结现有 bug 文件"
+  ],
+  "risks": [
+    "检测与冻结规则失配会导致误更新 mapper"
+  ],
+  "scale": [
+    "是 bugRepair 场景事件的起点"
+  ]
+}

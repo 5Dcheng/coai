@@ -1,0 +1,22 @@
+#!/bin/sh
+# CoAI pre-commit hook template
+# CoAI managed pre-commit hook
+
+status=0
+
+if [ -f .coai/coai/runtime/cli/coaiCli.js ]; then
+  node ./.coai/coai/runtime/cli/coaiCli.js pre-commit-check
+  status=$?
+elif [ -f package.json ]; then
+  npm run coai:pre-commit-check
+  status=$?
+else
+  echo "CoAI local runtime not found. Run the package-managed init/update flow first."
+  status=$?
+fi
+
+if [ $status -ne 0 ]; then
+  echo "CoAI pre-commit check failed, but CoAI v1 is fail-open and will not block this commit."
+fi
+
+exit 0

@@ -1,0 +1,17 @@
+{
+  "label": "Mapper代码跳转",
+  "intent": "根据 mapper 中缓存的 file + line 快速打开目标代码。",
+  "logic": [
+    "从 command 参数获取 token 与 sourceUri",
+    "根据 project 文档定位 mapper",
+    "读取 mapper entry",
+    "调用 VS Code API 打开目标文档并定位到 line"
+  ],
+  "risks": [
+    "mapper 与 project 路径不一致会导致无法跳转",
+    "目标文件不存在时需要提示而不是静默失败"
+  ],
+  "scale": [
+    "项目规模增大时仍应保持 O(1) 的 mapper 命中路径，避免点击时做全量扫描"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "label": "Bug流转命令",
+  "intent": "把 open bug 的状态流转入口接入插件命令层。",
+  "logic": [
+    "注册 resolveOpenBugLog 命令",
+    "复用统一输出通道",
+    "将状态流转交给 bugLog 模块"
+  ],
+  "risks": [
+    "如果入口未注册，bug 生命周期无法在插件内闭环"
+  ],
+  "scale": [
+    "后续可继续补 reopen 等命令而不破坏入口职责"
+  ]
+}

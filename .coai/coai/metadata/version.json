@@ -1,0 +1,29 @@
+{
+  "version": "0.1.0",
+  "releasedAt": "2026-04-15",
+  "channels": {
+    "systemPackage": {
+      "name": "@5dc/coai",
+      "type": "npm+vsix",
+      "version": "0.0.1"
+    },
+    "skill": {
+      "name": "coai",
+      "version": "0.1.0"
+    },
+    "workspaceAssets": {
+      "path": ".coai/coai",
+      "version": "0.1.0"
+    }
+  },
+  "compatibility": {
+    "vscodeExtension": "^0.0.1",
+    "skill": "^0.1.0",
+    "workspaceAssets": "^0.1.0"
+  },
+  "notes": [
+    "v1 当前采用 VS Code 插件加 CLI/Git hook 的双运行面。",
+    "skill、workspace assets 与 system package 采用分层更新策略。",
+    "workspace assets 当前尚未完全收口到 .coai/coai，本文件先作为版本与兼容性锚点。"
+  ]
+}

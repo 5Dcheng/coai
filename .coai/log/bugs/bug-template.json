@@ -1,0 +1,28 @@
+{
+  "id": "bug-2026-04-13-001",
+  "type": "missing-anchor",
+  "status": "open",
+  "createdAt": "2026-04-13T18:20:00+08:00",
+  "workspace": "E:/path/to/workspace",
+  "projectFile": ".coai/project/module/feature.md",
+  "sourceFile": ".coai/project/module/feature.md",
+  "mapperFile": ".coai/mapper/module/feature.mapper.json",
+  "nodeFile": ".coai/node/module/feature/节点名称.node.json",
+  "token": "节点名称",
+  "anchor": "module.feature.node.001",
+  "codeFile": "src/path/to/file.ts",
+  "contextFiles": [
+    ".coai/project/module/feature.md",
+    ".coai/mapper/module/feature.mapper.json",
+    ".coai/node/module/feature/节点名称.node.json",
+    "src/path/to/file.ts"
+  ],
+  "message": "Anchor not found during git sync.",
+  "systemAction": "reported_only",
+  "repairPrompt": "请参考 repair-prompt-template.md 生成完整修复提示词。",
+  "resolution": {
+    "resolvedAt": null,
+    "action": null,
+    "summary": null
+  }
+}

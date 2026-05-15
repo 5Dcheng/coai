@@ -1,0 +1,46 @@
+{
+  "nodes": {
+    "Bug检测": {
+      "anchor": "plugin.git-sync.command.001",
+      "file": "src/gitSync.ts",
+      "line": 11,
+      "lastUpdated": "2026-04-14"
+    },
+    "Bug记录": {
+      "anchor": "plugin.bug-repair.log-write.001",
+      "file": "src/core/bugStore.ts",
+      "line": 37,
+      "lastUpdated": "2026-04-15"
+    },
+    "问题面板显示": {
+      "anchor": "plugin.bug-repair.problems-panel.001",
+      "file": "src/bugLog.ts",
+      "line": 13,
+      "lastUpdated": "2026-04-15"
+    },
+    "问题面板刷新": {
+      "anchor": "plugin.bug-repair.problem-refresh-watch.001",
+      "file": "src/extension.ts",
+      "line": 59,
+      "lastUpdated": "2026-04-15"
+    },
+    "Bug修复流转": {
+      "anchor": "plugin.bug-repair.resolve-command.001",
+      "file": "src/repair.ts",
+      "line": 23,
+      "lastUpdated": "2026-04-15"
+    },
+    "Bug归档": {
+      "anchor": "plugin.bug-repair.archive-resolved.001",
+      "file": "src/repair.ts",
+      "line": 14,
+      "lastUpdated": "2026-04-14"
+    },
+    "Bug重新打开": {
+      "anchor": "plugin.bug-repair.reopen-command.001",
+      "file": "src/repair.ts",
+      "line": 85,
+      "lastUpdated": "2026-04-15"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "label": "Hook恢复命令",
+  "intent": "在 VS Code 入口层注册本地 pre-commit hook 备份恢复命令。",
+  "logic": [
+    "由 extension.ts 统一注册命令 ID",
+    "入口层只负责暴露命令，不实现恢复细节",
+    "实际恢复逻辑委托给 hookInstaller.ts 与 CLI 核心"
+  ],
+  "risks": [
+    "若命令未注册，用户无法从 VS Code 直接恢复备份",
+    "入口层不应承载 hook 恢复细节，避免职责混乱"
+  ],
+  "scale": [
+    "与安装命令、卸载命令并列形成 hook 生命周期入口",
+    "保持入口层稳定，减少对其他命令的影响"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "label": "提交前退回open bug",
+  "intent": "确保未处理的 CoAI open bug 不随业务代码提交进入暂存区。",
+  "logic": [
+    "pre-commit 核心读取当前 open bug 文件列表。",
+    "系统检查这些 open bug 文件是否已经被加入 git 暂存区。",
+    "若已暂存，则执行 git restore --staged 仅退回这些 open bug 文件。",
+    "其他暂存内容保持不变，宿主项目提交继续执行。"
+  ],
+  "risks": [
+    "open bug 是 CoAI 认知系统待处理项，不等同宿主项目工程 bug。",
+    "如果自动提交 open bug，开发者可能误以为问题已经处理。"
+  ],
+  "scale": [
+    "后续 strict 模式可以选择阻断提交，但 v1 默认 fail-open。"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "label": "问题面板显示",
+  "intent": "让未处理 bug 在 Problems 面板中持续可见。",
+  "logic": [
+    "读取 open bug",
+    "转换成 diagnostics",
+    "持续暴露待处理问题",
+    "监听 `.coai/log/bugs/**/*.json` 的创建、修改与删除",
+    "通过防抖刷新和定时兜底减少外部 git hook 修改后的状态残留"
+  ],
+  "risks": [
+    "Problems 不刷新会造成状态残留",
+    "外部进程快速 rename/delete 时，VS Code 文件事件可能延迟或丢失"
+  ],
+  "scale": [
+    "为人工或 AI 修复提供统一入口"
+  ]
+}

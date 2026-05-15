@@ -1,0 +1,17 @@
+{
+  "label": "Git Hook示例",
+  "intent": "在 `git commit` 前隐式调用 CoAI 的 CLI 检查能力。",
+  "logic": [
+    "执行 `npm run coai:pre-commit-check`",
+    "输出 CLI 检查结果与 warning",
+    "v1 始终 fail-open，不因 CoAI 异常阻断宿主项目提交"
+  ],
+  "risks": [
+    "hook 脚本依赖本地环境与 shell 可用性",
+    "如果脚本做了过多副作用，会影响提交体验"
+  ],
+  "scale": [
+    "当前先提供本地示例 hook",
+    "后续可继续演进为安装脚本或更正式的 hook 管理方式"
+  ]
+}

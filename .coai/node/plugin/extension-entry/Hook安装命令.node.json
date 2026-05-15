@@ -1,0 +1,17 @@
+{
+  "label": "Hook安装命令",
+  "intent": "在 VS Code 入口层注册本地 pre-commit hook 安装命令。",
+  "logic": [
+    "由 extension.ts 统一注册命令 ID",
+    "入口层只负责暴露命令，不实现 hook 安装细节",
+    "实际安装逻辑委托给 hookInstaller.ts 与 CLI 核心"
+  ],
+  "risks": [
+    "若命令未注册，用户无法从 VS Code 直接安装 hook",
+    "入口层不应承载 hook 安装细节，避免职责混乱"
+  ],
+  "scale": [
+    "后续如果增加更多 Git 入口安装命令，可继续在入口层统一挂载",
+    "保持入口层稳定，减少对其他已落实功能的影响"
+  ]
+}

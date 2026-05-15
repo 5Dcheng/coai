@@ -1,0 +1,17 @@
+{
+  "label": "提交前检查命令",
+  "intent": "在真正执行 git commit 前，显式触发一次 CoAI 检查。",
+  "logic": [
+    "先复用 git-sync 完成 mapper 增量维护与 bug 状态检查",
+    "再汇总当前 open bug 状态并给出提交前提示",
+    "若仍存在 bug，则允许开发者打开 bug 日志或自行决定是否继续提交"
+  ],
+  "risks": [
+    "当前只是显式命令，不会自动拦截所有 CLI git commit",
+    "如果用户绕过检查直接提交，bug 仍只能依赖后续再次扫描发现"
+  ],
+  "scale": [
+    "当前阶段适合作为命令入口",
+    "后续如要统一覆盖 CLI 与 VS Code，应进一步接入 Git hook"
+  ]
+}

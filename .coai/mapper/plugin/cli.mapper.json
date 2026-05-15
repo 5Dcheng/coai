@@ -1,0 +1,76 @@
+{
+  "nodes": {
+    "CLI入口": {
+      "anchor": "plugin.cli.entry.001",
+      "file": "src/cli/coaiCli.ts",
+      "line": 25,
+      "lastUpdated": "2026-04-18"
+    },
+    "包初始化执行": {
+      "anchor": "plugin.cli.init-core.001",
+      "file": "src/core/initCore.ts",
+      "line": 31,
+      "lastUpdated": "2026-04-22"
+    },
+    "版本信息输出": {
+      "anchor": "plugin.cli.version-core.001",
+      "file": "src/core/updateCore.ts",
+      "line": 61,
+      "lastUpdated": "2026-04-22"
+    },
+    "更新检查执行": {
+      "anchor": "plugin.cli.check-update-core.001",
+      "file": "src/core/updateCore.ts",
+      "line": 79,
+      "lastUpdated": "2026-04-22"
+    },
+    "系统资产更新": {
+      "anchor": "plugin.cli.update-core.001",
+      "file": "src/core/updateCore.ts",
+      "line": 108,
+      "lastUpdated": "2026-04-22"
+    },
+    "Anchor格式修复": {
+      "anchor": "plugin.cli.doctor-core.001",
+      "file": "src/core/anchorCore.ts",
+      "line": 47,
+      "lastUpdated": "2026-04-16"
+    },
+    "Hook安装执行": {
+      "anchor": "plugin.cli.install-hook-core.001",
+      "file": "src/core/hookInstallerCore.ts",
+      "line": 63,
+      "lastUpdated": "2026-04-14"
+    },
+    "Hook状态检测": {
+      "anchor": "plugin.cli.inspect-hook-core.001",
+      "file": "src/core/hookInstallerCore.ts",
+      "line": 36,
+      "lastUpdated": "2026-04-14"
+    },
+    "Hook卸载执行": {
+      "anchor": "plugin.cli.uninstall-hook-core.001",
+      "file": "src/core/hookInstallerCore.ts",
+      "line": 95,
+      "lastUpdated": "2026-04-14"
+    },
+    "Hook备份恢复": {
+      "anchor": "plugin.cli.restore-hook-core.001",
+      "file": "src/core/hookInstallerCore.ts",
+      "line": 121,
+      "lastUpdated": "2026-04-14"
+    },
+    "提交前检查转发": {
+      "anchor": "plugin.cli.pre-commit-core.001",
+      "file": "src/core/preCommitCore.ts",
+      "line": 19,
+      "lastUpdated": "2026-04-16"
+    },
+    "Git Hook示例": {
+      "anchor": "plugin.cli.git-hook.001",
+      "file": ".coai/coai/githooks/pre-commit",
+      "line": 2,
+      "lastUpdated": "2026-04-14"
+    }
+  }
+}

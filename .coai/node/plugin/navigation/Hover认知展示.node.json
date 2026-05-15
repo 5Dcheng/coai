@@ -1,0 +1,17 @@
+{
+  "label": "Hover认知展示",
+  "intent": "将功能节点的认知信息以 Hover 形式展示给开发者。",
+  "logic": [
+    "先识别 token",
+    "定位工作区",
+    "读取 node JSON",
+    "构造 MarkdownString 展示 intent、logic、risks、scale"
+  ],
+  "risks": [
+    "node 数据缺失时只能降级展示提示信息",
+    "Markdown 转义不足会导致展示错乱"
+  ],
+  "scale": [
+    "后续节点字段扩展时，应在 buildHoverMarkdown 中统一渲染，避免 provider 内部堆积格式逻辑"
+  ]
+}

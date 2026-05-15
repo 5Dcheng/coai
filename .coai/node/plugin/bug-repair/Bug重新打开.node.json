@@ -1,0 +1,16 @@
+{
+  "label": "Bug重新打开",
+  "intent": "将已归档的 resolved bug 退回 open，重新进入 bugRepair 闭环。",
+  "logic": [
+    "选择 resolved bug",
+    "写入 reopen 原因",
+    "迁移回 open",
+    "刷新 Problems 面板"
+  ],
+  "risks": [
+    "误 reopen 会让已结束问题重新阻塞 mapper 维护"
+  ],
+  "scale": [
+    "为复现类问题提供闭环回退能力"
+  ]
+}

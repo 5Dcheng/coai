@@ -1,0 +1,16 @@
+{
+  "label": "版本信息输出",
+  "intent": "让用户在终端中查看 CoAI npm 包、工作区系统资产与 VS Code 扩展兼容提示。",
+  "logic": [
+    "读取 npm 包 `package.json` 中的 name 与 version",
+    "读取宿主项目 `.coai/coai/metadata/version.json` 中的系统资产版本",
+    "输出 VS Code 扩展兼容版本提示，帮助用户判断是否需要同步更新 VSIX"
+  ],
+  "risks": [
+    "目标项目尚未初始化时，工作区系统资产版本可能不存在",
+    "CLI 不能直接判断 VS Code 扩展宿主中实际加载的版本，只能输出兼容提示"
+  ],
+  "scale": [
+    "后续可继续扩展为更完整的环境诊断命令。"
+  ]
+}

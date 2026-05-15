@@ -1,0 +1,17 @@
+{
+  "label": "CoAI路径解析",
+  "intent": "根据当前 project 文档路径，推导对应的 mapper 与 node 目录。",
+  "logic": [
+    "读取 coaiNavigation.projectRoot 配置",
+    "拼接 .coai/project、mapper、node 根目录",
+    "从 project 文档相对路径去掉扩展名",
+    "生成 mapperFile 与 nodeDir"
+  ],
+  "risks": [
+    "文档不在 .coai/project 下时无法解析",
+    "路径规则一旦变化，project、mapper、node 会整体失配"
+  ],
+  "scale": [
+    "集中路径解析可以确保后续扩展缓存、索引或多 workspace 支持时只有一个规则源"
+  ]
+}

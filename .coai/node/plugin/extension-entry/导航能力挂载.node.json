@@ -1,0 +1,15 @@
+{
+  "label": "导航能力挂载",
+  "intent": "将 markdown Hover、DocumentLink 与跳转命令挂接到独立导航模块。",
+  "logic": [
+    "注册 HoverProvider",
+    "注册 DocumentLinkProvider",
+    "注册 openMappedCode 命令"
+  ],
+  "risks": [
+    "挂载与模块实现脱节会让导航入口失效"
+  ],
+  "scale": [
+    "允许后续继续拆分 navigation 实现而不改入口协议"
+  ]
+}

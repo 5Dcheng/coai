@@ -1,0 +1,17 @@
+{
+  "label": "Anchor前缀自动修复",
+  "intent": "在 git-sync 维护链路中自动规范化非标准 anchor 前缀，避免固定格式问题进入 bugRepair。",
+  "logic": [
+    "只扫描本次 git changed files，不做默认全量修复",
+    "发现非标准 @coai anchor 前缀时，直接改写为标准格式",
+    "修复后立即继续后续 git-sync 扫描，不要求用户手动再执行 doctor"
+  ],
+  "risks": [
+    "该能力只适合修复固定前缀，不负责判断 anchor id 是否正确",
+    "如果把语义问题误当成格式问题，会掩盖真正需要 AI 或人工处理的异常"
+  ],
+  "scale": [
+    "适合作为 pre-commit 与手动同步命令的前置自修复步骤",
+    "可减少不同 LLM 生成代码时的 anchor 格式漂移"
+  ]
+}

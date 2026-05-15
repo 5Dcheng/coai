@@ -1,0 +1,18 @@
+{
+  "label": "缺失导航节点bug",
+  "intent": "当 Ctrl/Cmd + Click 无法跳转时，让用户决定忽略，还是把当前导航失败视为 bug 进入 bugRepair。",
+  "logic": [
+    "导航点击先判断文档是否位于 .coai/project 下。",
+    "若 mapper 缺失，则弹出提示并提供 视为 bug / 忽略 两个动作。",
+    "用户选择 视为 bug 后，系统写入 missing-node bug 文档。",
+    "随后刷新 Problems 面板，并提供打开 bug 日志入口。"
+  ],
+  "risks": [
+    "如果普通误触也频繁记录 bug，open bug 数量会膨胀。",
+    "missing-node 不对应具体代码文件，后续修复需要依赖 project/mapper/node 路径上下文。"
+  ],
+  "scale": [
+    "后续可继续扩展为更多导航失败类型，但当前只对 missing-node 开放主动上报。",
+    "bug 文件会携带 project、mapper、node 期望路径，降低后续 agent 全盘扫描成本。"
+  ]
+}

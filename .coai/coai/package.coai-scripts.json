@@ -1,0 +1,14 @@
+{
+  "scripts": {
+    "coai:init": "npm exec coai init",
+    "coai:version": "npm exec coai version",
+    "coai:check-update": "npm exec coai check-update",
+    "coai:update": "npm exec coai update",
+    "coai:doctor": "node ./.coai/coai/runtime/cli/coaiCli.js doctor",
+    "coai:pre-commit-check": "node ./.coai/coai/runtime/cli/coaiCli.js pre-commit-check",
+    "coai:install-hook": "node ./.coai/coai/runtime/cli/coaiCli.js install-hook",
+    "coai:install-hooks": "node ./.coai/coai/runtime/cli/coaiCli.js install-hooks",
+    "coai:uninstall-hook": "node ./.coai/coai/runtime/cli/coaiCli.js uninstall-hook",
+    "coai:restore-hook": "node ./.coai/coai/runtime/cli/coaiCli.js restore-hook"
+  }
+}

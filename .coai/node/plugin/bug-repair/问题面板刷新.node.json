@@ -1,0 +1,16 @@
+{
+  "label": "问题面板刷新",
+  "intent": "让 Problems 面板在 bug 文件被外部 git hook 创建、删除或迁移后自动刷新。",
+  "logic": [
+    "在 VS Code extension 激活时挂载 `.coai/log/bugs/**/*.json` 文件监听",
+    "监听 create、change、delete 事件后防抖刷新 open bug diagnostics",
+    "增加短周期定时刷新兜底，降低外部进程快速 rename/delete 导致的状态残留"
+  ],
+  "risks": [
+    "VS Code 文件事件对外部进程修改不是强一致保证",
+    "定时刷新不能过于频繁，否则会增加无意义文件读取"
+  ],
+  "scale": [
+    "后续可改为更精细的 bug index 或事件队列，目前保持轻量兜底。"
+  ]
+}

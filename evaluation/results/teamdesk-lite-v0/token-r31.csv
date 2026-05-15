@@ -1,0 +1,4 @@
+runId,condition,model,requestCount,inputTokensNonCache,cacheHitTokens,outputTokens,totalBilledUsageTokens,totalAmountCny,filesRead,sourceFilesRead,coaiFilesRead,answerQualityScore,notes
+GLM-BASE-R31-A1,baseline-token,glm-5-turbo,11,40200,252873,6582,299655,0.7905314,26,26,0,5,"New-chat project cognition baseline; token data from Zhipu billing export split by input/cache-hit/output and context tier."
+GLM-COAI-R31-A1,coai-token,glm-5-turbo,7,33134,136302,5304,174740,0.508423,31,8,23,5,"New-chat project cognition with CoAI; token data from second Zhipu billing export, using .coai cognition assets plus limited source verification."
+GLM-AGENTS-R31-A1,agents-md-token,glm-5-turbo,3,6623,52800,2496,61919,0.151387,4,3,0,5,"New-chat project cognition with AGENTS.md; read AGENTS.md plus three source files (transition.ts, db.ts, api.ts). Token data from Zhipu billing export using 0-32k tier prices."

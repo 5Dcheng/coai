@@ -1,0 +1,15 @@
+{
+  "label": "Mapper回写",
+  "intent": "仅在行号变化时更新 mapper，降低无效写入。",
+  "logic": [
+    "对比新旧 line",
+    "有变化时更新 line 与 lastUpdated",
+    "统一写回对应 mapper 文件"
+  ],
+  "risks": [
+    "误写会直接影响后续点击跳转准确性"
+  ],
+  "scale": [
+    "按 mapper 文件聚合回写，便于后续扩展更复杂的同步策略"
+  ]
+}

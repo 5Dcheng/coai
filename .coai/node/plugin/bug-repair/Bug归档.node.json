@@ -1,0 +1,15 @@
+{
+  "label": "Bug归档",
+  "intent": "把已解决 bug 从 open 迁移到 resolved，完成一次闭环。",
+  "logic": [
+    "识别 fixed/wont_fix/obsolete 状态",
+    "迁移到 resolved",
+    "清理 open 集合"
+  ],
+  "risks": [
+    "错误归档会让未处理 bug 脱离追踪"
+  ],
+  "scale": [
+    "保证 bugRepair 场景可以形成闭环"
+  ]
+}

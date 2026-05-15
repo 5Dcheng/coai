@@ -1,0 +1,64 @@
+{
+  "nodes": {
+    "Token识别": {
+      "anchor": "plugin.navigation.token.001",
+      "file": "src/navigation.ts",
+      "line": 211,
+      "lastUpdated": "2026-04-17"
+    },
+    "Hover认知展示": {
+      "anchor": "plugin.navigation.hover.001",
+      "file": "src/navigation.ts",
+      "line": 50,
+      "lastUpdated": "2026-04-17"
+    },
+    "Mapper代码跳转": {
+      "anchor": "plugin.navigation.click.001",
+      "file": "src/navigation.ts",
+      "line": 97,
+      "lastUpdated": "2026-04-17"
+    },
+    "Anchor行号校正": {
+      "anchor": "plugin.navigation.anchor-sync.001",
+      "file": "src/navigation.ts",
+      "line": 172,
+      "lastUpdated": "2026-04-17"
+    },
+    "CoAI路径解析": {
+      "anchor": "plugin.navigation.resolve-paths.001",
+      "file": "src/navigation.ts",
+      "line": 306,
+      "lastUpdated": "2026-04-17"
+    },
+    "无node节点": {
+      "anchor": "plugin.navigation.branch.no-node.001",
+      "file": "src/navigation.ts",
+      "line": 63,
+      "lastUpdated": "2026-04-17"
+    },
+    "非project文档": {
+      "anchor": "plugin.navigation.branch.non-project-doc.001",
+      "file": "src/navigation.ts",
+      "line": 315,
+      "lastUpdated": "2026-04-17"
+    },
+    "过期mapper行号": {
+      "anchor": "plugin.navigation.anchor-sync.001",
+      "file": "src/navigation.ts",
+      "line": 172,
+      "lastUpdated": "2026-04-17"
+    },
+    "缺失mapper映射": {
+      "anchor": "plugin.navigation.exception.missing-mapper.001",
+      "file": "src/navigation.ts",
+      "line": 128,
+      "lastUpdated": "2026-04-17"
+    },
+    "缺失导航节点bug": {
+      "anchor": "plugin.navigation.bug-report.001",
+      "file": "src/navigation.ts",
+      "line": 455,
+      "lastUpdated": "2026-04-17"
+    }
+  }
+}

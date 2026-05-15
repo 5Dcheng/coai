@@ -1,0 +1,19 @@
+{
+  "label": "提交前检查转发",
+  "intent": "让 CLI 与 Git hook 共用同一条 pre-commit 核心能力。",
+  "logic": [
+    "调用无 VS Code 依赖的 pre-commit core",
+    "执行 git-sync 检查并汇总 open bug 状态",
+    "暂存本次系统写过的 mapper 文件",
+    "暂存本次归档到 resolved 的 bug 文件",
+    "将已暂存的 open bug 文件退回修改区"
+  ],
+  "risks": [
+    "如果核心仍依赖 VS Code API，将无法在 hook 中运行",
+    "如果 hook 直接继承异常退出码，会错误阻断宿主项目提交"
+  ],
+  "scale": [
+    "CLI 与 hook 共用同一实现，减少双份逻辑",
+    "后续可继续复用到更多终端自动化场景"
+  ]
+}

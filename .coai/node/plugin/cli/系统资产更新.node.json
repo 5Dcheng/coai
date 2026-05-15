@@ -1,0 +1,17 @@
+{
+  "label": "系统资产更新",
+  "intent": "更新宿主项目中的 `.coai/coai/` 系统资产，而不覆盖宿主项目语义层。",
+  "logic": [
+    "从 npm 包内 `template/.coai/coai/` 复制系统资产到宿主项目 `.coai/coai/`",
+    "覆盖系统资产中的 hook、docs、metadata、scripts 与模板文件",
+    "合并最新 `coai:*` scripts 到宿主项目 `package.json`",
+    "重新安装 CoAI 管理的 pre-commit hook"
+  ],
+  "risks": [
+    "不能覆盖 `.coai/project`、`.coai/mapper`、`.coai/node` 或 open bug 日志",
+    "不能删除用户在 `.coai/coai/` 中自行新增但系统不认识的文件，v1 只做复制覆盖"
+  ],
+  "scale": [
+    "后续可演进为带迁移脚本、冲突检测和版本区间判断的正式 updater。"
+  ]
+}

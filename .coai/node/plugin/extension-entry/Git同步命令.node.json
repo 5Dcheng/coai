@@ -1,0 +1,15 @@
+{
+  "label": "Git同步命令",
+  "intent": "把 git 增量维护能力接入命令面板。",
+  "logic": [
+    "注册 syncMapperFromGitChanges 命令",
+    "复用统一输出通道",
+    "将执行控制交给 gitSync 模块"
+  ],
+  "risks": [
+    "命令 ID 变更会影响开发者使用与调试"
+  ],
+  "scale": [
+    "系统维护功能可继续扩展，但入口层保持统一注册"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "nodes": {
+    "节点A": {
+      "anchor": "module.feature.node-a.001"
+    },
+    "节点B": {
+      "anchor": "module.feature.node-b.001",
+      "file": "src/path/to/file.ts",
+      "line": 25,
+      "lastUpdated": "2026-04-13"
+    }
+  }
+}

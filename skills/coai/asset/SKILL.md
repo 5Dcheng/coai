@@ -16,6 +16,7 @@ Use `SKILL_ch.md` as the Chinese mirror for developer review and wording refinem
 This includes:
 
 - `.coai/project`
+- `.coai/contract`
 - `.coai/mapper`
 - `.coai/node`
 - `.coai/log/bugs` templates or repair prompts
@@ -38,6 +39,7 @@ Keep these rules in working memory before generating any asset:
 - create only the assets the current task actually requires
 - keep `.coai/current.md` as dynamic progress, never as a second feature doc
 - module docs such as `.coai/project/<module>.md` are optional and should exist only when module-level semantics or feature relationships need explanation
+- contract docs under `.coai/contract/object`, `.coai/contract/algorithm`, and `.coai/contract/interface` are optional and should exist only for complete data structures, testable algorithms, or module-level communication interfaces that help before reading source
 - keep `.coai` for settled cognition, not for full exploration history
 - add trial-and-error lessons only when they have become stable, high-value guidance for future understanding, implementation, or maintenance
 
@@ -47,6 +49,7 @@ Use this map when the next action is already known:
 
 - add a new feature cognition entry: create `.coai/project/<module>/<feature>.md`
 - add a module cognition entry when needed: create `.coai/project/<module>.md`
+- add a structured agreement when needed: create `.coai/contract/**` with normal Markdown links and no `[[double-link tokens]]` by default
 - bind the feature to code: decide `anchor` and mapper skeleton first, write `@coai anchor: <id>` in real code, write `anchor` and `file` back into mapper, then let the system align `line`
 - add hover cognition: create `.coai/node/<module>/<feature>/` only for tokens that deserve hover help
 - update project progress only: edit `.coai/current.md`
@@ -85,6 +88,22 @@ Create or update a project doc when:
 - a new feature is added
 - feature cognition materially changes
 - a major branch/exception rule needs to be documented
+
+### Contract
+
+Create or update contract when:
+
+- an object / data structure should be complete enough to act as a template or implementation guide
+- an algorithm needs input, expected output, and key behavior so unit tests can be derived
+- a module-level communication interface needs a stable request / response agreement
+
+Do not create contract when:
+
+- the feature doc plus source entry is already clear enough
+- the information is local implementation detail
+- the content would duplicate source code without adding cognition value
+
+Contract files should use normal Markdown links and file paths by default. Do not use `[[double-link tokens]]` in contract files unless contract mapper semantics are explicitly supported.
 
 ### Mapper
 
@@ -190,6 +209,7 @@ Use this boundary before writing any project-doc content:
 - do not create placeholder mapper entries with no real anchors
 - do not generate nodes for every sentence in a feature doc
 - do not put system assets into `.coai/project`, `.coai/mapper`, or `.coai/node`
+- do not turn `.coai/contract` into a full spec store or source-code summary
 - do not leave literal placeholders like `<module>` or `<feature>` in a real host repository
 - do not leave `.coai/current.md` empty after real progress
 - do not overwrite user-authored CoAI assets blindly

@@ -1,0 +1,58 @@
+{
+  "nodes": {
+    "插件激活": {
+      "anchor": "plugin.extension-entry.activate.001",
+      "file": "src/extension.ts",
+      "line": 12,
+      "lastUpdated": "2026-04-14"
+    },
+    "导航能力挂载": {
+      "anchor": "plugin.extension-entry.navigation-registration.001",
+      "file": "src/extension.ts",
+      "line": 18,
+      "lastUpdated": "2026-04-14"
+    },
+    "Git同步命令": {
+      "anchor": "plugin.extension-entry.git-sync-command.001",
+      "file": "src/extension.ts",
+      "line": 27,
+      "lastUpdated": "2026-04-14"
+    },
+    "提交前检查命令": {
+      "anchor": "plugin.extension-entry.pre-commit-command.001",
+      "file": "src/extension.ts",
+      "line": 31,
+      "lastUpdated": "2026-04-14"
+    },
+    "Hook安装命令": {
+      "anchor": "plugin.extension-entry.install-hook-command.001",
+      "file": "src/extension.ts",
+      "line": 35,
+      "lastUpdated": "2026-04-14"
+    },
+    "Hook卸载命令": {
+      "anchor": "plugin.extension-entry.uninstall-hook-command.001",
+      "file": "src/extension.ts",
+      "line": 39,
+      "lastUpdated": "2026-04-14"
+    },
+    "Hook恢复命令": {
+      "anchor": "plugin.extension-entry.restore-hook-command.001",
+      "file": "src/extension.ts",
+      "line": 43,
+      "lastUpdated": "2026-04-14"
+    },
+    "Bug流转命令": {
+      "anchor": "plugin.extension-entry.bug-log-command.001",
+      "file": "src/extension.ts",
+      "line": 47,
+      "lastUpdated": "2026-04-14"
+    },
+    "Bug重新打开命令": {
+      "anchor": "plugin.extension-entry.bug-reopen-command.001",
+      "file": "src/extension.ts",
+      "line": 51,
+      "lastUpdated": "2026-04-14"
+    }
+  }
+}

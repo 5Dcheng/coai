@@ -1,0 +1,15 @@
+{
+  "label": "Bug重新打开命令",
+  "intent": "将 resolved bug 的 reopen 入口接入插件命令层。",
+  "logic": [
+    "注册 reopenResolvedBugLog 命令",
+    "复用统一输出通道",
+    "将 reopen 流程交给 repair 模块"
+  ],
+  "risks": [
+    "如果入口未注册，resolved bug 无法退回 open"
+  ],
+  "scale": [
+    "补足 bugRepair 场景的命令闭环"
+  ]
+}

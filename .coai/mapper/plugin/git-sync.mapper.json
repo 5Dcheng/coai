@@ -1,0 +1,130 @@
+{
+  "nodes": {
+    "提交前检查命令": {
+      "anchor": "plugin.git-sync.pre-commit-command.001",
+      "file": "src/preCommitCheck.ts",
+      "line": 5,
+      "lastUpdated": "2026-04-14"
+    },
+    "手动同步命令": {
+      "anchor": "plugin.git-sync.command.001",
+      "file": "src/gitSync.ts",
+      "line": 11,
+      "lastUpdated": "2026-04-14"
+    },
+    "Git变更收集": {
+      "anchor": "plugin.git-sync.core-git-status.001",
+      "file": "src/core/gitSyncCore.ts",
+      "line": 294,
+      "lastUpdated": "2026-04-16"
+    },
+    "Mapper反向索引": {
+      "anchor": "plugin.git-sync.core-mapper-index.001",
+      "file": "src/core/gitSyncCore.ts",
+      "line": 337,
+      "lastUpdated": "2026-04-23"
+    },
+    "Anchor批量扫描": {
+      "anchor": "plugin.git-sync.core-anchor-scan.001",
+      "file": "src/core/gitSyncCore.ts",
+      "line": 409,
+      "lastUpdated": "2026-04-23"
+    },
+    "Anchor前缀自动修复": {
+      "anchor": "plugin.git-sync.anchor-normalize.001",
+      "file": "src/core/anchorCore.ts",
+      "line": 118,
+      "lastUpdated": "2026-04-16"
+    },
+    "Mapper骨架待落地": {
+      "anchor": "plugin.git-sync.branch.mapper-skeleton-without-file.001",
+      "file": "src/core/gitSyncCore.ts",
+      "line": 368,
+      "lastUpdated": "2026-04-23"
+    },
+    "Mapper回写": {
+      "anchor": "plugin.git-sync.write-mapper.001",
+      "file": "src/core/gitSyncCore.ts",
+      "line": 271,
+      "lastUpdated": "2026-04-16"
+    },
+    "提交前暂存源码": {
+      "anchor": "plugin.cli.stage-code-core.001",
+      "file": "src/core/preCommitCore.ts",
+      "line": 69,
+      "lastUpdated": "2026-04-16"
+    },
+    "提交前暂存mapper": {
+      "anchor": "plugin.cli.stage-mapper-core.001",
+      "file": "src/core/preCommitCore.ts",
+      "line": 88,
+      "lastUpdated": "2026-04-16"
+    },
+    "提交前暂存resolved bug": {
+      "anchor": "plugin.cli.stage-bug-core.001",
+      "file": "src/core/preCommitCore.ts",
+      "line": 107,
+      "lastUpdated": "2026-04-16"
+    },
+    "提交前退回open bug": {
+      "anchor": "plugin.cli.unstage-open-bug-core.001",
+      "file": "src/core/preCommitCore.ts",
+      "line": 126,
+      "lastUpdated": "2026-04-16"
+    },
+    "同步结果输出": {
+      "anchor": "plugin.git-sync.core-scan-files.001",
+      "file": "src/core/gitSyncCore.ts",
+      "line": 172,
+      "lastUpdated": "2026-04-16"
+    },
+    "未命中mapper": {
+      "anchor": "plugin.git-sync.core-command.001",
+      "file": "src/core/gitSyncCore.ts",
+      "line": 65,
+      "lastUpdated": "2026-04-16"
+    },
+    "行号未变化": {
+      "anchor": "plugin.git-sync.core-scan-files.001",
+      "file": "src/core/gitSyncCore.ts",
+      "line": 172,
+      "lastUpdated": "2026-04-16"
+    },
+    "同文件多节点": {
+      "anchor": "plugin.git-sync.core-scan-files.001",
+      "file": "src/core/gitSyncCore.ts",
+      "line": 172,
+      "lastUpdated": "2026-04-16"
+    },
+    "非git工作区": {
+      "anchor": "plugin.git-sync.core-git-status.001",
+      "file": "src/core/gitSyncCore.ts",
+      "line": 294,
+      "lastUpdated": "2026-04-16"
+    },
+    "非法mapper": {
+      "anchor": "plugin.git-sync.exception.invalid-mapper.001",
+      "file": "src/core/gitSyncCore.ts",
+      "line": 350,
+      "lastUpdated": "2026-04-23"
+    },
+    "缺失anchor": {
+      "anchor": "plugin.git-sync.exception.missing-anchor.001",
+      "file": "src/core/gitSyncCore.ts",
+      "line": 198,
+      "lastUpdated": "2026-04-16"
+    },
+    "重复anchor": {
+      "anchor": "plugin.git-sync.exception.duplicate-anchor.001",
+      "file": "src/core/gitSyncCore.ts",
+      "line": 216,
+      "lastUpdated": "2026-04-16"
+    },
+    "冻结mapper": {
+      "anchor": "plugin.git-sync.branch.freeze-on-open-bug.001",
+      "file": "src/core/gitSyncCore.ts",
+      "line": 176,
+      "lastUpdated": "2026-04-16"
+    }
+  }
+}

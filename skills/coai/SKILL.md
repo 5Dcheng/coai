@@ -34,10 +34,12 @@ Keep these rules in working memory even before reading deeper files:
 - Source-file boundaries follow implementation isolation, not feature-doc shape.
 - `.coai` lives at the workspace root as `./.coai`.
 - AI adds new CoAI assets, the system maintains deterministic mapping, and AI or humans make semantic repair decisions.
-- `project` explains feature meaning, `node` explains hover cognition, `mapper` points to code, and `current.md` tracks only dynamic progress.
+- `project` explains feature meaning, optional `contract` explains structured data / algorithm / interface agreements, `node` explains hover cognition, `mapper` points to code, and `current.md` tracks only dynamic progress.
 - Shared code may keep multiple semantic anchors; do not promote it to `utils/common` unless the shared capability itself becomes a cognition entry point.
 - Use VS Code for interaction surfaces and CLI / Git hook for automation surfaces.
 - CoAI stores settled cognition, not the full exploration trail.
+- CoAI assets follow progressive disclosure: read `current.md`, then the relevant feature doc, then contract only if the task needs structured data, algorithm, or interface agreements, then source only as needed.
+- Contract files use normal Markdown links and file paths by default; do not use `[[double-link tokens]]` in contract unless contract mapper semantics are explicitly supported.
 - Stable lessons earned through trial and error may be written sparingly into the relevant feature doc; raw exploration history should stay out of `.coai`.
 - `anchor id` should be decided before implementation starts.
 - `mapper file` should usually be decided before implementation starts.
@@ -81,7 +83,7 @@ This file stays minimal on purpose. Use it as the stable entry and route immedia
 
 - broad, mixed, or still-unclear task: `router/SKILL.md`
 - feature boundary, source-file ownership, shared-code/common judgment, or whether `.coai` should change: `core/SKILL.md`
-- `.coai/project`, `.coai/mapper`, `.coai/node`, `current.md`, templates, or examples: `asset/SKILL.md`
+- `.coai/project`, `.coai/contract`, `.coai/mapper`, `.coai/node`, `current.md`, templates, or examples: `asset/SKILL.md`
 - VS Code vs CLI, init, update, doctor, git-sync, pre-commit, bug-repair, or hook behavior: `runtime/SKILL.md`
 
 ## References
